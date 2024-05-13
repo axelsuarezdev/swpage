@@ -1,0 +1,31 @@
+{
+  "name": "swpage",
+  "version": "1.0.0",
+  "description": "NEOWYZE landing page",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axelsuarezdev/swpage.git"
+  },
+  "author": "Axel Julian Suarez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/axelsuarezdev/swpage/issues"
+  },
+  "homepage": "https://github.com/axelsuarezdev/swpage#readme",
+  "dependencies": {
+    "next": "^14.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.11",
+    "@types/react": "18.3.2",
+    "typescript": "5.4.5"
+  }
+}
