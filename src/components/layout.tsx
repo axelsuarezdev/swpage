@@ -34,13 +34,15 @@ export default function Layout({children}){
     </svg>
   `;
     return (
-            <div className="h-screen bg-black" style={{
+            <div className="h-screen bg-black flex flex-col justify-between" style={{
                 backgroundImage: `url("data:image/svg+xml;utf8,${encodeURIComponent(
                     svgBackground
                 )}")`,
                 backgroundRepeat: "repeat",
                 backgroundSize: "100% 100%",
                 backgroundColor: "#1a1a1a",
+                height: "auto",
+                minHeight: "100vh"
                 }}>
             <Header/>
             <main className="h-3/4 content-center min-h-80">{children}</main>
