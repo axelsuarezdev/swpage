@@ -8,8 +8,8 @@ export default function Films({films}){
   
     return (
        <Layout>
-        <h1>Explore the Star Wars Filmography</h1>
-        <p>Embark on an intergalactic journey through the Star Wars universe! Explore the iconic films and meet their legendary characters. From the epic battles of the Jedi to the rise of the Sith, immerse yourself in the rich storytelling and unforgettable adventures of a galaxy far, far away</p>
+        <h1 className='text-4xl md:text-3xl lg:text-4xl font-medium text-medium text-center'>Explore the <span className='text-amber-300'>Star Wars</span> Filmography</h1>
+        <p className='text-gray-600 mt-2 md:mt-4 text-center'>Embark on an intergalactic journey through the Star Wars universe! Explore the iconic films and meet their legendary characters. From the epic battles of the Jedi to the rise of the Sith, immerse yourself in the rich storytelling and unforgettable adventures of a galaxy far, far away</p>
         
         <h2>Films</h2>
         <ul>

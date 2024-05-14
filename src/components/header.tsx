@@ -7,7 +7,7 @@ import { FaLanguage } from "react-icons/fa";
 
 
 export function Header(){
-    return <header className="flex justify-between items-center p-3 px-8" style={{height: "15vh"}}>
+    return <header className="flex justify-between items-center p-3 px-8 min-h-14" style={{height: "15vh"}}>
         <Link href="/">
             <h1 className="text-xl hover:text-amber-300 text-white">STAR WARS</h1>
         </Link>
