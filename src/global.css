@@ -1,9 +1,10 @@
-@import url('https://fonts.cdnfonts.com/css/star-wars');
+@import url('https://fonts.cdnfonts.com/css/sf-distant-galaxy');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 *{
-    font-family: 'Star Wars', sans-serif;
+    font-family: 'SF Distant Galaxy', sans-serif;
+    color: white;
 }

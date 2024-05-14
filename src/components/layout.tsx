@@ -3,6 +3,7 @@ import { Header } from "./header";
 import { Footer } from "./footer";
 
 export default function Layout({children}){
+    // Los puntitos que simulan las estrellas del fondo
     const svgBackground = `
     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
       ${Array.from({ length: 100 }).map(
@@ -16,7 +17,7 @@ export default function Layout({children}){
         backgroundImage: `url("data:image/svg+xml;utf8,${encodeURIComponent(
             svgBackground
           )}")`,
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
           backgroundSize: "100% 100%",
           backgroundColor: "#1a1a1a",
     }}>
