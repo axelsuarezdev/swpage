@@ -7,6 +7,6 @@ export default function Character(){
         <Layout>
             <h1>Hello Character!</h1>
         </Layout>
-   
+
     )
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Card({index, episode_id, title, image}){
     return (<div className="group">
-        <Link key={index} href={`/film/${episode_id}`} className='group'> 
+        <Link key={index} href={`/film/${episode_id}`} className='group items-center flex flex-col'> 
             <Image 
             className='rounded-2xl sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300' 
             src={image}
