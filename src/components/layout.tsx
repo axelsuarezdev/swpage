@@ -43,7 +43,7 @@ export default function Layout({children}){
                 backgroundColor: "#1a1a1a",
                 }}>
             <Header/>
-            <main className="h-3/4 content-cente min-h-80">{children}</main>
+            <main className="h-3/4 content-center min-h-80">{children}</main>
             <Footer/>
             </div>
     )
