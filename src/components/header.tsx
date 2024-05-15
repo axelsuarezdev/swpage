@@ -12,7 +12,7 @@ export function Header(){
             <h1 className="text-xl hover:text-amber-300 text-white">STAR WARS</h1>
         </Link>
         <div className="flex gap-4">
-            <MenuIcon Icon={FaPerson} title={"CHARACTERS"} address="/characters"/>
+            <MenuIcon Icon={FaPerson} title={"CHARACTERS"} address="/characters/1"/>
             <MenuIcon Icon={RiFilmFill} title={"FILMS"} address="/films"/>
         </div>
   </header>
