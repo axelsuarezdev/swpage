@@ -1,12 +1,11 @@
 import Link from "next/link";
-import Image from "next/image";
 
 export default function CharacterCard({ eyecolor, gender,  name, image}){
     // /${episode_id}
     const isValidToShow = (value)=> value !== "n/a" && value !=="unknown";
     return (<div className="group">
         <Link href={`/character/${name}`} className='group items-center flex flex-col'> 
-            <Image 
+            <img 
             className='rounded-2xl sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300' 
             src={image}
             alt="Film poster" 

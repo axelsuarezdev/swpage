@@ -1,11 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 
-export default function MovieCard({ episode_id, title, image}){
+export default function MovieCard({ episode_id, title, image, id}){
     // /${episode_id}
-    return (<div className="group">
-        <Link href={`/films`} className='group items-center flex flex-col'> 
-            <Image 
+    return (<div className="group items-center flex flex-col">
+        <Link href={`/film/${id}`}> 
+            <img 
             className='rounded-2xl sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300' 
             src={image}
             alt="Film poster" 

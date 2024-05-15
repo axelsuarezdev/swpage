@@ -13,7 +13,7 @@ export default function Films({films}){
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8'>
 
         {films.map((film, index) => (
-        <MovieCard key={index }image={"/movie.jpg"} title={film.title} episode_id={film.episode_id}></MovieCard>
+        <MovieCard key={index }image={"/movie.jpg"} title={film.title} episode_id={film.episode_id} id={film.url.split("/")[film.url.split("/").length - 2]}></MovieCard>
         ))}
 
         </div>
