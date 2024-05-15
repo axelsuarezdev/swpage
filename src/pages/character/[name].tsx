@@ -52,7 +52,6 @@ export const getStaticProps: GetStaticProps = async (context)=>{
         const fileContent = fs.readFileSync(filePath, "utf8");
         const characters = JSON.parse(fileContent);
         character = characters.find((char)=> char.name === name);
-        console.log("Character: ", character);
     } catch (err){
         console.error("Error leyendo el archivo characters")
     }

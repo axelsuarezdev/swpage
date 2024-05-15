@@ -73,7 +73,6 @@ export const getStaticProps: GetStaticProps = async (context)=>{
 
         // Escribir la lista actualizada en el archivo
         fs.writeFileSync(filePath, JSON.stringify(allCharacters, null, 2));
-        console.log("Personajes del archivo: ", allCharacters);
     }
 
     return {
