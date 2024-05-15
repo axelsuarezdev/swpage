@@ -10,7 +10,7 @@ export default function Character({character}){
         <Layout>
             <div key={character.name} className='flex flex-col md:flex-row items-center' style={{padding: "0 15%"}}>
 
-                <img src="/character.jpg" className='md:w-1/2 object-cover' height={200} width={300} style={{borderRadius: "15px"}}/>
+                <img src="/character.jpg" className='md:w-1/2 object-cover' height={200} width={300} style={{borderRadius: "15px", maxHeight: "550px", maxWidth: "400px"}}/>
                 <div className='rounded-lg shadow-lg p-4 md:p-6 mt-4 md:mt-0 md:ml-4 md:flex-grow' style={{border: "2px solid white"}}>
                     <h1 className='text-center md:text-left text-2xl md:text-4xl lg:text-2xl font-medium text-amber-300' style={{borderBottom: "2px solid white"}}>{character.name}</h1>
                     <div className='grid grid-cols-2 gap-2 mt-4 items-start'>

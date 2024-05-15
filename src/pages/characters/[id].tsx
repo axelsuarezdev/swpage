@@ -12,7 +12,7 @@ export default function CharactersPage({characters, pageNumber}){
     return (
         <Layout>
            <h1 className='text-4xl md:text-3xl lg:text-4xl font-medium text-medium text-center'>Discover the <span className='text-amber-300'>Star Wars</span> Characters</h1>
-            <p className='text-gray-600 mt-2 md:mt-4 text-center' style={{margin: "20px"}}>Embark on an intergalactic journey through the Star Wars universe! Meet the iconic characters from the epic saga. From brave Jedi warriors to powerful Sith lords, explore the rich diversity and captivating stories of the characters that inhabit a galaxy far, far away.</p>
+            <p className='text-gray-600 mt-2 md:mt-4 text-center' style={{margin: "20px"}}>Embark on an intergalactic journey through the Star Wars universe! Meet the iconic characters from the epic saga. From brave Jedi Knights to powerful Sith lords, explore the rich diversity and captivating stories of the characters that inhabit a galaxy far, far away.</p>
         
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8'>
             {characters.map((character, index) => (
