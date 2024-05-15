@@ -42,9 +42,9 @@ export default function CharactersPage({characters, pageNumber}){
 
     )
 }
-export const getStaticProps: GetStaticProps = async (context) => {
-    const { params } = context;
-    const { id } = params;
+export const getStaticProps: GetStaticProps = async (context)=>{
+    const {params} = context;
+    const {id} = params;
     const res = await fetch(`https://swapi.dev/api/people/?page=${id}`);
     const data = await res.json();
     const characters = data.results;
@@ -53,8 +53,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     // Guardar la data de cada personaje
     let allCharacters = [];
     const fileName = 'characters.json';
-    const fileDirectory = path.join(process.cwd(), 'public');
-    const filePath = path.join(fileDirectory, fileName);
+    const filePath = path.join(process.cwd(),'public', fileName);
 
     // Verificar si el archivo ya existe
     if (fs.existsSync(filePath)) {
@@ -73,8 +72,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
         allCharacters = allCharacters.concat(newUniqueCharacters);
 
         // Escribir la lista actualizada en el archivo
-        await fs.promises.mkdir(fileDirectory, { recursive: true }); // Asegurarse de que el directorio exista
-        await fs.promises.writeFile(filePath, JSON.stringify(allCharacters, null, 2));
+        fs.writeFileSync(filePath, JSON.stringify(allCharacters, null, 2));
     }
 
     return {
