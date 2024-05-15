@@ -5,7 +5,7 @@ export default function CharacterCard({index, eyecolor, gender,  name, image}){
     // /${episode_id}
     const isValidToShow = (value)=> value !== "n/a" && value !=="unknown";
     return (<div className="group">
-        <Link key={index} href={`/characters`} className='group items-center flex flex-col'> 
+        <Link key={index} href={`/`} className='group items-center flex flex-col'> 
             <Image 
             className='rounded-2xl sm:rounded-t-lg group-hover:opacity-75 transition-opacity duration-300' 
             src={image}

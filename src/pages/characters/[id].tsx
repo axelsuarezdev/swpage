@@ -3,14 +3,16 @@ import Layout from '../../components/layout';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import Link from 'next/link';
 import CharacterCard from '../../components/characterCard';
+import fs from "fs"
+import path from 'path';
 
 export default function CharactersPage({characters, pageNumber}){
     const nextEnabled = pageNumber <9;
     const prevEnabled = pageNumber >1
     return (
         <Layout>
-           <h1 className='text-4xl md:text-3xl lg:text-4xl font-medium text-medium text-center'>Explore the <span className='text-amber-300'>Star Wars</span> Filmography</h1>
-            <p className='text-gray-600 mt-2 md:mt-4 text-center' style={{margin: "20px"}}>Embark on an intergalactic journey through the Star Wars universe! Explore the iconic films and meet their legendary characters. From the epic battles of the Jedi to the rise of the Sith, immerse yourself in the rich storytelling and unforgettable adventures of a galaxy far, far away</p>
+           <h1 className='text-4xl md:text-3xl lg:text-4xl font-medium text-medium text-center'>Discover the <span className='text-amber-300'>Star Wars</span> Characters</h1>
+            <p className='text-gray-600 mt-2 md:mt-4 text-center' style={{margin: "20px"}}>Embark on an intergalactic journey through the Star Wars universe! Meet the iconic characters from the epic saga. From brave Jedi warriors to powerful Sith lords, explore the rich diversity and captivating stories of the characters that inhabit a galaxy far, far away.</p>
         
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8'>
             {characters.map((character, index) => (
@@ -23,15 +25,15 @@ export default function CharactersPage({characters, pageNumber}){
             ))}
         </div>
 
-        <div className="flex justify-center mt-4 gap-4">
+        <div className="flex justify-center gap-4 m-14">
         {prevEnabled && (
-          <Link href={`/characters/${pageNumber - 1}`}  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Link href={`/characters/${pageNumber - 1}`}  className="bg-black hover:bg-amber-300 hover:text-black text-amber-300 font-bold py-2 px-4 rounded">
               Previous
           </Link>
         )}
 
         {nextEnabled && (
-          <Link href={`/characters/${pageNumber + 1}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          <Link href={`/characters/${pageNumber + 1}`} className="bg-black hover:bg-amber-300 hover:text-black text-amber-300 font-bold py-2 px-4 rounded">
               Next
           </Link>
         )}
@@ -47,7 +49,33 @@ export const getStaticProps: GetStaticProps = async (context)=>{
     const data = await res.json();
     const characters = data.results;
     const pageNumber = parseInt(id as string, 10)
-    console.log(characters)
+
+    // Guardar la data de cada personaje
+    let allCharacters = [];
+    const fileName = 'characters.json';
+    const filePath = path.join(process.cwd(), fileName);
+
+    // Verificar si el archivo ya existe
+    if (fs.existsSync(filePath)) {
+        // Leer el archivo existente
+        const fileData = fs.readFileSync(filePath, 'utf8');
+        allCharacters = JSON.parse(fileData);
+    }
+
+    // Filtrar personajes nuevos que no están en el archivo existente
+    const newUniqueCharacters = characters.filter(newCharacter =>
+        !allCharacters.some(existingCharacter => existingCharacter.name === newCharacter.name)
+    );
+
+    if (newUniqueCharacters.length > 0) {
+        // Agregar los nuevos personajes únicos a la lista existente
+        allCharacters = allCharacters.concat(newUniqueCharacters);
+
+        // Escribir la lista actualizada en el archivo
+        fs.writeFileSync(filePath, JSON.stringify(allCharacters, null, 2));
+        console.log("Personajes del archivo: ", allCharacters);
+    }
+
     return {
         props: {
             characters,
