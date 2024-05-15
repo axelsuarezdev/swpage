@@ -17,7 +17,7 @@ export default function CharactersPage({characters, pageNumber}){
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8'>
             {characters.map((character, index) => (
             <CharacterCard image={"/character.jpg"} 
-                index={index} 
+                key={index} 
                 eyecolor={character.eye_color} 
                 gender={character.gender} 
                 name={character.name}
