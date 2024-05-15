@@ -25,9 +25,9 @@ export default function Character({film, characters}){
                 {characters.map((character, index) => (
                     <Link key={index} href={`/character/${character.name}`}>
                     <div className='flex flex-col items-center shadow-lg h-full w-full hover:scale-110' key={index}>
-                        <img src="/character.jpg" className='md:w-1/2 object-cover' height={200} width={300} style={{borderRadius: "15px"}}/>
+                        <img src="/character.jpg" className='object-cover' height={200} width={300} style={{borderRadius: "15px"}}/>
                         <div className='rounded-lg  p-4 md:p-6 mt-4 md:mt-0 md:ml-4 md:flex-grow'>
-                            <h1 className='text-center text-2xl md:text-4xl lg:text-2xl font-medium text-amber-300'>{character.name}</h1>
+                            <h1 className='text-center text-2xl md:text-2xl lg:text-2xl font-medium text-amber-300'>{character.name}</h1>
                         </div>
                     </div>
                     </Link>
