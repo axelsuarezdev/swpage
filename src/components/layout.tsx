@@ -1,7 +1,6 @@
 import React from "react";
 import { Header } from "./header";
 import { Footer } from "./footer";
-import { RecoilRoot } from "recoil";
 
 export default function Layout({children}){
     // Los puntitos que simulan las estrellas del fondo
