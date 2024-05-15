@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (context)=>{
     let character;
     // Búsqueda del archivo generado por 'characters/[id].tsx
     try {
-        const filePath = path.join(process.cwd(), 'characters.json');
+        const filePath = path.join(process.cwd(),'public', 'characters.json');
         const fileContent = fs.readFileSync(filePath, "utf8");
         const characters = JSON.parse(fileContent);
         character = characters.find((char)=> char.name === name);
@@ -65,7 +65,7 @@ export const getStaticProps: GetStaticProps = async (context)=>{
 export const getStaticPaths: GetStaticPaths = async () => {
     let paths = [];
     try {
-        const filePath = path.join(process.cwd(), 'characters.json');
+        const filePath = path.join(process.cwd(),'public', 'characters.json');
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const characters = JSON.parse(fileContent);
 
